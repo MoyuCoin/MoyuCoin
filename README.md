@@ -9,6 +9,9 @@ yarn
 npm i
 ```
 
+
+
+
 ## 配置
 
 将 **.env.template** 重命名为 **.env**
