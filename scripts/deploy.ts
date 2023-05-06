@@ -2,10 +2,11 @@ import { ethers } from "hardhat";
 
 async function main() {
   const MoyuCoin = await ethers.getContractFactory("MoyuCoin");
-  const coin = await MoyuCoin.deploy(114514);
+  const coin = await MoyuCoin.deploy();
 
+  
   await coin.deployed();
-
+  
   console.log(
     `MoyuCoin deployed to: ${coin.address}`
   );

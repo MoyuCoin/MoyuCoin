@@ -14,13 +14,13 @@ describe("MoyuCoin", function () {
 
         const MoyuCoin = await ethers.getContractFactory("MoyuCoin");
         const coin = await MoyuCoin.deploy();
-
+        
         return { coin, owner, otherAccount };
     }
 
-    describe("Deployment", function () {
+    describe("部署", function () {
 
-        it("是否初始化了114514个摸鱼币", async function () {
+        it("初始化", async function () {
             const { coin, owner } = await loadFixture(deployCoin);
             await expect(await coin.owner()).to.equal(
                 owner.address
