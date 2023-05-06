@@ -15,10 +15,12 @@ describe("MoyuCoin", function () {
         const MoyuCoin = await ethers.getContractFactory("MoyuCoin");
         const coin = await MoyuCoin.deploy();
         
+
         return { coin, owner, otherAccount };
     }
 
-    describe("部署", function () {
+
+    describe("摸鱼币", function () {
 
         it("初始化", async function () {
             const { coin, owner } = await loadFixture(deployCoin);
@@ -26,7 +28,15 @@ describe("MoyuCoin", function () {
                 owner.address
             );
         });
+        it("mint测试", async function () {
+            const { coin, owner,otherAccount } = await loadFixture(deployCoin);
+            // mint 100个币
+            await coin.connect(owner).mint(otherAccount.address,100)
+            await expect(await coin.balanceOf(otherAccount.address)).to.equal(100);
+        });
 
     });
 
+
+    
 });

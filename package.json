@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "complie": "npx hardhat compile",
+    "build": "npx hardhat compile",
     "test": "npx hardhat test",
     "net:test": "npx hardhat node",
-    "deploy:localhost": "npx hardhat run scripts/deploy.ts --network localhost"
+    "deploy:localhost": "npx hardhat run scripts/deploy.ts --network localhost",
+    "deploy:testnet": "npx hardhat run scripts/deploy.ts --network sepolia"
   },
   "author": "CLKCLK",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.1.0",
     "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
     "hardhat": "^2.14.0",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.1",
