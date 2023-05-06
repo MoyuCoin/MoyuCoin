@@ -1,0 +1,21 @@
+{
+  "name": "moyucoin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "complie": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "net:test": "npx hardhat node",
+    "deploy:localhost": "npx hardhat run scripts/deploy.ts --network localhost"
+  },
+  "author": "CLKCLK",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.14.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.3"
+  }
+}
