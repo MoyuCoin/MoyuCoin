@@ -18,6 +18,13 @@ describe("MoyuCoin", function () {
 
         return { coin, owner, otherAccount };
     }
+    async function deployNFT(){
+        const [owner, otherAccount] = await ethers.getSigners();
+        const Auth = await ethers.getContractFactory("Auth");
+        const coin = await Auth.deploy();
+
+        return { coin, owner, otherAccount };
+    }
 
 
     describe("摸鱼币", function () {
@@ -31,11 +38,13 @@ describe("MoyuCoin", function () {
         it("mint测试", async function () {
             const { coin, owner,otherAccount } = await loadFixture(deployCoin);
             // mint 100个币
-            await coin.connect(owner).mint(otherAccount.address,100)
-            await expect(await coin.balanceOf(otherAccount.address)).to.equal(100);
+            const minted = ethers.BigNumber.from(100).pow(18);
+            await coin.connect(owner).mint(otherAccount.address,minted)
+            await expect(await coin.balanceOf(otherAccount.address)).to.equal(minted);
         });
 
     });
+
 
 
     

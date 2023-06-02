@@ -8,9 +8,9 @@ const envConfig = dotenv.config()
 const config: HardhatUserConfig = {
   solidity: "0.8.18",
   networks:{
-    sepolia: {
-      url: `https://eth-sepolia.g.alchemy.com/v2/${envConfig?.parsed!.ALCHEMY_API_KEY}`,
-      accounts: [envConfig?.parsed!.SEPOLIA_PRIVATE_KEY]
+    linea: {
+      url: envConfig?.parsed!.RPC_URL,
+      accounts: [envConfig?.parsed!.PRIVATE_KEY]
     }
   }
 };
