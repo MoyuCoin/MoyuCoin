@@ -8,7 +8,7 @@ const envConfig = dotenv.config()
 const config: HardhatUserConfig = {
   solidity: "0.8.18",
   networks:{
-    linea: {
+    test: {
       url: envConfig?.parsed!.RPC_URL,
       accounts: [envConfig?.parsed!.PRIVATE_KEY]
     }
